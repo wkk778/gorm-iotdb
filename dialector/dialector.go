@@ -121,20 +121,20 @@ func (d Dialector) DefaultValueOf(field *schema.Field) clause.Expression {
 
 // BindVarTo writes a positional bind variable.
 func (d Dialector) BindVarTo(writer clause.Writer, _ *gorm.Statement, _ interface{}) {
-	writer.WriteByte('?')
+	_ = writer.WriteByte('?')
 }
 
 // QuoteTo writes a quoted identifier.
 func (d Dialector) QuoteTo(writer clause.Writer, str string) {
-	writer.WriteByte('"')
+	_ = writer.WriteByte('"')
 	for _, r := range str {
 		if r == '"' {
-			writer.WriteString(`""`)
+			_, _ = writer.WriteString(`""`)
 			continue
 		}
-		writer.WriteString(string(r))
+		_, _ = writer.WriteString(string(r))
 	}
-	writer.WriteByte('"')
+	_ = writer.WriteByte('"')
 }
 
 // Explain renders SQL with bound values for logs and dry runs.
@@ -164,7 +164,7 @@ func (d Dialector) createCallback() func(*gorm.DB) {
 		groups, err := d.groupByShard(db.Statement)
 		if err != nil || len(groups) <= 1 {
 			if err != nil {
-				db.AddError(err)
+				_ = db.AddError(err)
 				return
 			}
 			defaultCreate(db)
@@ -181,7 +181,7 @@ func (d Dialector) createCallback() func(*gorm.DB) {
 			subtx.Statement.ReflectValue = indirectValue(reflect.ValueOf(group.Value))
 			defaultCreate(subtx)
 			if subtx.Error != nil {
-				db.AddError(subtx.Error)
+				_ = db.AddError(subtx.Error)
 				return
 			}
 			rowsAffected += subtx.RowsAffected
@@ -239,12 +239,12 @@ func buildLimit(c clause.Clause, builder clause.Builder) {
 	}
 
 	if limit.Limit != nil && *limit.Limit >= 0 {
-		builder.WriteString("LIMIT ")
+		_, _ = builder.WriteString("LIMIT ")
 		builder.AddVar(builder, *limit.Limit)
 	}
 
 	if limit.Offset > 0 {
-		builder.WriteString(" OFFSET ")
+		_, _ = builder.WriteString(" OFFSET ")
 		builder.AddVar(builder, limit.Offset)
 	}
 }

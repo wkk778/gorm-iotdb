@@ -70,10 +70,6 @@ type connect struct {
 	timeZone    *time.Location
 }
 
-func (c *connect) debugf(format string, v ...any) {
-	c.debugfFunc(format, v...)
-}
-
 func (c *connect) isBad() bool {
 	return false
 }
