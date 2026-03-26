@@ -1,20 +1,20 @@
 # gorm-iotdb
 
-[![CI](https://github.com/yourname/gorm-iotdb/actions/workflows/ci.yml/badge.svg)](https://github.com/yourname/gorm-iotdb/actions/workflows/ci.yml)
-[![pkg.go.dev](https://pkg.go.dev/badge/github.com/yourname/gorm-iotdb.svg)](https://pkg.go.dev/github.com/yourname/gorm-iotdb)
+[![CI](https://github.com/wkk778/gorm-iotdb/actions/workflows/ci.yml/badge.svg)](https://github.com/wkk778/gorm-iotdb/actions/workflows/ci.yml)
+[![pkg.go.dev](https://pkg.go.dev/badge/github.com/wkk778/gorm-iotdb.svg)](https://pkg.go.dev/github.com/wkk778/gorm-iotdb)
 
 `gorm-iotdb` is a standalone GORM v1.25.x dialector for Apache IoTDB built from the original `gormiotdb/dialector.go` prototype and expanded into a reusable module with a dedicated driver wrapper, migrator, examples, and CI scaffolding.
 
 ## Status
 
-The source tree in this workspace is organized as a repo-ready module under this directory. For local offline compilation in the parent workspace, `go.mod` still keeps a temporary `replace github.com/apache/iotdb-client-go/v2 => ../` directive. Use `scripts/export-standalone.ps1` to emit a clean standalone copy with that coupling removed.
+The source tree in this workspace is organized as a repo-ready module under this directory. The exported copy is independent from the parent workspace and uses the final module path `github.com/wkk778/gorm-iotdb`.
 
 The official GORM upstream suite integration is wired as a repository layout and script contract, but the actual upstream submodule content still needs to be fetched in a network-enabled clone.
 
 ## Install
 
 ```bash
-go get github.com/yourname/gorm-iotdb
+go get github.com/wkk778/gorm-iotdb
 ```
 
 ## Quick Start
@@ -26,7 +26,7 @@ import (
     "log"
     "time"
 
-    gormiotdb "github.com/yourname/gorm-iotdb"
+    gormiotdb "github.com/wkk778/gorm-iotdb"
     "gorm.io/gorm"
 )
 
@@ -58,7 +58,7 @@ func main() {
 - `examples/`: runnable usage samples
 - `tests/`: dry-run tests and upstream suite adapter entrypoint
 - `docs/`: design, benchmark, and migration notes
-- `scripts/export-standalone.ps1`: emits a clean standalone copy under `_export/`
+- `scripts/`: helper scripts for export, tests, and benchmark updates
 
 ## Configuration
 
@@ -125,5 +125,4 @@ The repository is structured for IoTDB `1.1.x`, `1.2.x`, and forward-compatible 
 
 ## Export Notes
 
-This exported copy has the parent-workspace eplace ../ directive removed so it can become its own repository.
-Run go mod tidy in a network-enabled environment before the first push if the upstream IoTDB client module is not already cached.
+Run `go mod tidy` in a network-enabled environment before the first push if the upstream IoTDB client module is not already cached.

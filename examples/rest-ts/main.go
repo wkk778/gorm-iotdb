@@ -7,7 +7,7 @@ import (
 	"os"
 	"time"
 
-	gormiotdb "github.com/yourname/gorm-iotdb"
+	gormiotdb "github.com/wkk778/gorm-iotdb"
 	"gorm.io/gorm"
 )
 

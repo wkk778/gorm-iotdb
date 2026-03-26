@@ -1,9 +1,9 @@
-module github.com/yourname/gorm-iotdb
+module github.com/wkk778/gorm-iotdb
 
 go 1.21
 
 require (
-	github.com/apache/iotdb-client-go/v2 v2.0.0
+	github.com/apache/iotdb-client-go/v2 v2.0.0-20260316140622-410a2b4cc087
 	gorm.io/gorm v1.25.7
 )
 

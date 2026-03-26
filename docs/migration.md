@@ -2,7 +2,7 @@
 
 ## From the original in-tree prototype
 
-1. Replace `github.com/apache/iotdb-client-go/v2/gormiotdb` with `github.com/yourname/gorm-iotdb`.
+1. Replace `github.com/apache/iotdb-client-go/v2/gormiotdb` with `github.com/wkk778/gorm-iotdb`.
 2. Keep the same `gorm.Open(gormiotdb.Open(dsn), ...)` call shape.
 3. Move any custom schema logic to `gorm:"...;iotdb:tag"` and `gorm:"...;iotdb:time"` tags.
 4. If you already manage a shared connection pool, switch to `gormiotdb.New(gormiotdb.Config{Conn: pool})`.

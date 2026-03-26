@@ -8,8 +8,8 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/yourname/gorm-iotdb/driver"
-	"github.com/yourname/gorm-iotdb/internal/model"
+	"github.com/wkk778/gorm-iotdb/driver"
+	"github.com/wkk778/gorm-iotdb/internal/model"
 	"gorm.io/gorm"
 	"gorm.io/gorm/callbacks"
 	"gorm.io/gorm/clause"

@@ -4,7 +4,7 @@ package gormiotdb
 import (
 	"gorm.io/gorm"
 
-	"github.com/yourname/gorm-iotdb/dialector"
+	"github.com/wkk778/gorm-iotdb/dialector"
 )
 
 // Config configures the IoTDB dialector.
