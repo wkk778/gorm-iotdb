@@ -5,7 +5,7 @@ import (
 	"database/sql"
 	"time"
 
-	_ "github.com/apache/iotdb-client-go/v2/database"
+	_ "github.com/wkk778/gorm-iotdb/driver/iotdbsql"
 )
 
 // DriverName is the registered database/sql driver name exposed by the upstream client.
