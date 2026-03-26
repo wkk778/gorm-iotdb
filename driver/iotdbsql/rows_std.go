@@ -58,7 +58,6 @@ func (s *stdRows) Next(dest []driver.Value) error {
 				dest[i] = v
 			default:
 				dest[i] = value
-				break
 			}
 		}
 	}

@@ -23,15 +23,11 @@ var _contextOptionKey = &QueryOptions{
 
 type (
 	QueryOption  func(*QueryOptions) error
-	AsyncOptions struct {
-		ok   bool
-		wait bool
-	}
+	AsyncOptions struct{}
 	QueryOptions struct {
 		async    AsyncOptions
 		queryID  string
 		quotaKey string
-		jwt      string
 
 		settings            Settings
 		parameters          Parameters

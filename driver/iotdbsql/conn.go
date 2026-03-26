@@ -90,9 +90,9 @@ func (c *connect) ping(ctx context.Context) (err error) {
 
 func (c *connect) query(ctx context.Context, release nativeTransportRelease, query string, args ...any) (*rows, error) {
 	var (
-		options   = queryOptions(ctx)
-		body, err = bindQueryOrAppendParameters(&options, query, c.timeZone, args...)
+		options = queryOptions(ctx)
 	)
+	body, err := bindQueryOrAppendParameters(&options, query, c.timeZone, args...)
 	session, err := c.conn.GetSession()
 	defer c.conn.PutBack(session)
 	if err != nil {

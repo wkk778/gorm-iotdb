@@ -11,9 +11,6 @@ type nativeTransport interface {
 	query(ctx context.Context, release nativeTransportRelease, query string, args ...any) (*rows, error)
 }
 
-// nativeTransport represents an implementation (TCP or HTTP) that can be pooled by the main iotdb struct.
-// Implementations are not expected to be thread safe, which is why we provide acquire/release functions.
-type nativeTransportAcquire func(context.Context) (nativeTransport, error)
 type nativeTransportRelease func(nativeTransport, error)
 
 var (

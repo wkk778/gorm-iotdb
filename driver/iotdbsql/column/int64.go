@@ -50,5 +50,4 @@ func (i *Int64) ScanType() reflect.Type {
 	return reflect.TypeOf(&String{})
 }
 func (i *Int64) Reset() {
-	return
 }

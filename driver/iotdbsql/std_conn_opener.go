@@ -46,7 +46,7 @@ func (o *stdConnOpener) Connect(ctx context.Context) (_ driver.Conn, err error) 
 		return dial(ctx, addr, num, opt)
 	}
 
-	if o.opt.Addr == nil || len(o.opt.Addr) == 0 {
+	if len(o.opt.Addr) == 0 {
 		return nil, ErrAcquireConnNoAddress
 	}
 
