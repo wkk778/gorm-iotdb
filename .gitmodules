@@ -1,0 +1,3 @@
+[submodule "testdata/gorm-test"]
+	path = testdata/gorm-test
+	url = https://github.com/go-gorm/gorm.git

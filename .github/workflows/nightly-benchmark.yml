@@ -1,0 +1,17 @@
+name: nightly-benchmark
+
+on:
+  schedule:
+    - cron: "0 18 * * *"
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.21"
+      - run: bash ./scripts/update-benchmark.sh
