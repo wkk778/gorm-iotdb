@@ -5,6 +5,7 @@ SHELL := /bin/sh
 test:
 	go test ./...
 	go test ./tests/...
+	go test -race ./dialector ./internal/...
 
 lint:
 	golangci-lint run ./...
@@ -17,3 +18,6 @@ doc:
 
 release:
 	goreleaser release --clean
+
+tidy:
+	go mod tidy

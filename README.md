@@ -1,6 +1,7 @@
 # gorm-iotdb
 
 [![CI](https://github.com/wkk778/gorm-iotdb/actions/workflows/ci.yml/badge.svg)](https://github.com/wkk778/gorm-iotdb/actions/workflows/ci.yml)
+[![Release](https://github.com/wkk778/gorm-iotdb/actions/workflows/release.yml/badge.svg)](https://github.com/wkk778/gorm-iotdb/actions/workflows/release.yml)
 [![pkg.go.dev](https://pkg.go.dev/badge/github.com/wkk778/gorm-iotdb.svg)](https://pkg.go.dev/github.com/wkk778/gorm-iotdb)
 
 `gorm-iotdb` is a standalone GORM v1.25.x dialector for Apache IoTDB built from the original `gormiotdb/dialector.go` prototype and expanded into a reusable module with a dedicated driver wrapper, migrator, examples, and CI scaffolding.
@@ -16,6 +17,8 @@ The official GORM upstream suite integration is wired as a repository layout and
 ```bash
 go get github.com/wkk778/gorm-iotdb
 ```
+
+Repository: `https://github.com/wkk778/gorm-iotdb`
 
 ## Quick Start
 
@@ -100,6 +103,7 @@ func main() {
 make test
 make lint
 make bench
+make release
 ```
 
 The `tests/` directory is ready for the upstream GORM test harness. After initializing the submodule, run:
@@ -108,6 +112,12 @@ The `tests/` directory is ready for the upstream GORM test harness. After initia
 git submodule update --init --recursive
 go test ./tests/...
 ```
+
+## Releases
+
+- Push a tag like `v0.1.0` to trigger the release workflow.
+- GitHub Actions uses `.goreleaser.yml` to generate release notes, checksums, and archives.
+- Current archive targets are `linux-amd64` and `darwin-arm64`.
 
 ## FAQ
 
