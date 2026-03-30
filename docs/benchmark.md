@@ -6,7 +6,7 @@ This workspace does not contain a running IoTDB benchmark environment, so the nu
 
 | Date | Go | OS | IoTDB | Dataset | Write rows/s | Query p95 ms |
 | --- | --- | --- | --- | --- | ---: | ---: |
-| 2026-03-29 | 1.21 | ubuntu-latest | 1.2.0 | TPC-TS 1GB | pending | pending |
+| 2026-03-30 | 1.21 | ubuntu-latest | 1.2.0 | TPC-TS 1GB | pending | pending |
 
 ## Workflow
 
